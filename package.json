@@ -1,0 +1,41 @@
+{
+	"name": "wakatime-stats",
+	"version": "0.0.1",
+	"main": "dist/index.js",
+	"scripts": {
+		"start": "node dist/src/index.js",
+		"build": "swc src -d dist",
+		"dev": "tsx watch src/index.ts"
+	},
+	"dependencies": {
+		"axios": "^1.9.0",
+		"dotenv": "^16.5.0"
+	},
+	"devDependencies": {
+		"@swc/cli": "^0.7.7",
+		"@swc/core": "^1.11.29",
+		"@types/node": "^18.0.0",
+		"tsx": "^4.19.4"
+	},
+	"initTp": "v0.0.3",
+	"prettier": {
+		"$schema": "http://json.schemastore.org/prettierrc",
+		"endOfLine": "lf",
+		"printWidth": 200,
+		"quoteProps": "as-needed",
+		"semi": true,
+		"singleQuote": true,
+		"tabWidth": 4,
+		"trailingComma": "none",
+		"useTabs": true,
+		"overrides": [
+			{
+				"files": "*.yml",
+				"options": {
+					"tabWidth": 2,
+					"useTabs": false
+				}
+			}
+		]
+	}
+}
