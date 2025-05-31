@@ -35,5 +35,11 @@ Display your WakaTime coding stats as a GitHub Gist on your profile.
     GIST_ID=your_gist_id
     GH_TOKEN=your_github_token
     ```
+6. **Run the Workflow (First Time Only)**
+    - Go to your forked repo
+    - Open the **Actions** tab
+    - Click **Update WakaTime Stats**
+    - Click **Run workflow**
+    - This only needs to be done once to trigger the first update
 
 Done. The workflow will update your gist with your latest weekly coding stats.
