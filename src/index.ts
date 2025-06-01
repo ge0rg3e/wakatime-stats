@@ -18,7 +18,7 @@ interface GistResponse {
 
 // Utility for logging
 const log = {
-	info: (msg: string) => console.log(`ℹ️   ${msg}`),
+	info: (msg: string) => console.log(`ℹ️ ${msg}`),
 	error: (msg: string) => console.error(`❌ ${msg}`)
 };
 
@@ -58,11 +58,30 @@ const formatDuration = (seconds: number): string => {
 	return `${hours ? `${hours} hrs ` : ''}${minutes ? `${minutes} mins` : ''}`.trim() || '0 mins';
 };
 
-// Create progress bar
+// Create progress bar with different styles
 const createProgressBar = (percentage: number): string => {
 	const blocks = 14;
 	const filled = Math.round((percentage / 100) * blocks);
-	return '▰'.repeat(filled) + '▱'.repeat(blocks - filled);
+	const progressStyle = process.env.PROGRESS_STYLE || 'default';
+
+	let filledChar: string, emptyChar: string;
+	switch (progressStyle.toLowerCase()) {
+		case 'arrow':
+			filledChar = '▶';
+			emptyChar = '▷';
+			break;
+		case 'hash':
+			filledChar = '#';
+			emptyChar = '-';
+			break;
+		case 'default':
+		default:
+			filledChar = '▰';
+			emptyChar = '▱';
+			break;
+	}
+
+	return filledChar.repeat(filled) + emptyChar.repeat(blocks - filled);
 };
 
 // Format stats for gist
