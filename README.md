@@ -9,7 +9,7 @@ Display your WakaTime coding stats as a GitHub Gist on your profile.
 1. **Create a Public Gist**
 
     - Go to https://gist.github.com/
-    - Create a new gist with any filename you want (e.g. "☕ Weekly Coding Stats")
+    - Create a new gist with random filename
 
 2. **Generate GitHub Token**
 
@@ -34,7 +34,8 @@ Display your WakaTime coding stats as a GitHub Gist on your profile.
     WAKATIME_TOKEN=your_wakatime_token
     GIST_ID=your_gist_id
     GH_TOKEN=your_github_token
-    PROGRESS_STYLE=default
+    TIME_RANGE= # 'yesterday' | 'last_7_days' | 'last_30_days' | 'last_year'
+    PROGRESS_STYLE= # 'default' | 'arrow' | 'hash'
     ```
 
 6. **Run the Workflow (First Time Only)**
